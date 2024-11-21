@@ -1,0 +1,16 @@
+<sign> ::= + | -
+<lparen> ::= (
+<rparen> ::= )
+<quote> ::= " | '
+<integer> ::= <digit> | <digit><integer>
+<decimal> ::= <integer>.<integer>
+<factor> ::= <integer> | <decimal> | <identifier> | <sign> <factor> | <lparen> <expr> <raparen>
+<term> ::= <term> * <factor> | <term> / <factor> | <factor>
+<expr> ::= <expr> + <term> | <expr> - <term> | <term>
+<letter> ::= [A - Z] | [a - z]
+<character> ::= <letter> | <digit> 
+<string> ::= <character> | <character><string>
+<string_literal> ::= <quote> <string> <quote> 
+<identifier>  ::= <letter> | <identifier><character>  
+<assignment> ::= <identifier> = <expr> | <identifier> = <string_literal>
+ 
